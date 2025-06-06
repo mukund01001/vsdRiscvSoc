@@ -1,4 +1,4 @@
-RISC-V SoC Lab – C2S Program
+**RISC-V SoC Lab – C2S Program**
 
 This project is part of the Chip to Startup (C2S) initiative by the Government of India, aimed at enabling students and researchers to design and build silicon chips using open-source RISC-V architecture.
 
