@@ -112,7 +112,8 @@ Upon successful completion, you should see output similar to:
 
 ## 📸 Implementation Output
 ![Screenshot 2025-06-07 211436](Week1/screenshots/Week1toolchain_sanity_check.png)
-![Screenshot 2025-06-07 211446](https://github.com/user-attachments/assets/f69d6fdc-2d29-4c3f-8b94-d961fd39b9b7)
+![Screenshot 2025-06-07 211446](Week1/screenshots/Week1toolchain_sanity_check (2).png)
+![Screenshot 2025-06-07 211448](Week1/screenshots/riscv bin folders.png)
 
 
 *Screenshot demonstrating successful RISC-V toolchain installation with version verification of gcc, objdump, and gdb binaries in WSL environment.*
