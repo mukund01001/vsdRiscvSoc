@@ -6,11 +6,7 @@ Task 1: RISC-V Toolchain Setup and Verification
 [![Status](https://img.shields.io/badge/Status-✅%20Complete-success.svg)]()
 
 
-## 🎯 Objective
-
-Successfully install the RISC-V toolchain in WSL (Windows Subsystem for Linux), configure the environment variables, and verify that the essential binaries (`gcc`, `objdump`, and `gdb`) function correctly for cross-compilation development.
-
-## 📋 Prerequisites
+ Prerequisites
 
 - ✅ WSL (Windows Subsystem for Linux) installed and configured
 - ✅ Downloaded `riscv-toolchain-rv32imac-x86_64-ubuntu.tar.gz` in Windows Downloads directory
