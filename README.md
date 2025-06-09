@@ -113,18 +113,6 @@ Upon successful completion, you should see output similar to:
 
 *Screenshot demonstrating successful RISC-V toolchain installation with version verification of gcc, objdump, and gdb binaries in WSL environment.*
 
-## ⚠️ Troubleshooting Guide
-
-### Common Issues and Solutions:
-
-| Issue | Cause | Solution |
-|-------|--------|----------|
-| `command not found` | Incorrect PATH configuration | Verify PATH points to `/opt/riscv/riscv/bin` |
-| Permission denied | Insufficient permissions | Use `sudo` for operations in `/opt/riscv` |
-| Multiple PATH entries | Repeated exports in `.bashrc` | Clean up `.bashrc` manually |
-| Extraction errors | Corrupted download | Re-download the toolchain archive |
-
----
 
 
 
@@ -152,9 +140,7 @@ Upon successful completion, you should see output similar to:
 
 
 
-
-
-# 🏗️ Task 2: Cross-Compile "Hello, RISC-V"
+#  Task 2: Cross-Compile "Hello, RISC-V"
 
 [![RISC-V](https://img.shields.io/badge/Architecture-RISC--V-blue.svg)](https://riscv.org/)
 [![C Programming](https://img.shields.io/badge/Language-C-00599C.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
@@ -165,14 +151,14 @@ Upon successful completion, you should see output similar to:
 
 Create a minimal C "Hello World" program and successfully cross-compile it for the RISC-V RV32 architecture, producing a valid 32-bit RISC-V ELF executable that demonstrates proper toolchain functionality.[1][4]
 
-## 📋 Prerequisites
+## Prerequisites
 
 - ✅ RISC-V toolchain installed and configured (Task 1 completed)
 - ✅ PATH environment variable set to `/opt/riscv/riscv/bin`
 - ✅ Verified `riscv32-unknown-elf-gcc` functionality
-- ✅ Basic understanding of C programming and cross-compilation concepts
 
-## 🚀 Step-by-Step Implementation
+
+##  Step-by-Step Implementation
 
 ### Step 1: Create the Hello World C Program
 
@@ -224,7 +210,8 @@ riscv32-unknown-elf-gcc -dumpmachine
 ```
 
 Basic objdump header check
-```bash riscv32-unknown-elf-objdump -h hello.elf
+```bash
+riscv32-unknown-elf-objdump -h hello.elf
 ```
 📊 Confirmed Working Results
 Your Successful Output:
@@ -247,19 +234,9 @@ Default ISA: Automatically includes RV32IMAC support
 
 Compilation Method: Default configuration (no explicit flags needed)
 
-🚫 What NOT to Use (Causes Errors):
-```bash
-# ❌ AVOID - Causes multilib errors in your setup:
-riscv32-unknown-elf-gcc -march=rv32imc -mabi=ilp32 -o hello.elf hello.c
-
-# ❌ AVOID - Explicit ISA flags incompatible with your toolchain:
-riscv32-unknown-elf-gcc -march=rv32i -mabi=ilp32 -o hello.elf hello.c
-```
-
-
 #Implementation Output:
-![Screenshot 2025-06-07 211758](https://github.com/user-attachments/assets/a2dddd9e-d004-4e6a-8413-0cfec8a6f5b3)
-![Screenshot 2025-06-07 211812](https://github.com/user-attachments/assets/7b1303ce-80ea-41da-a41e-b3feab5f0a3c)
+![Screenshot 2025-06-07 211758](Week1/screenshots/Screenshot_2025-06-09_190238.png)
+![Screenshot 2025-06-07 211812](Week1/screenshots/Screenshot_2025-06-09_183637.png)
 
 
 ✅ Success Criteria Met:
