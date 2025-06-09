@@ -235,8 +235,8 @@ Default ISA: Automatically includes RV32IMAC support
 Compilation Method: Default configuration (no explicit flags needed)
 
 #Implementation Output:
-![Screenshot 2025-06-07 211758](Week1/screenshots/Screenshot_2025-06-09_190238.png)
-![Screenshot 2025-06-07 211812](Week1/screenshots/Screenshot_2025-06-09_183637.png)
+![Screenshot 2025-06-07 211758](Week1/screenshots/Screenshot190238.png)
+![Screenshot 2025-06-07 211812](Week1/screenshots/Screenshot183637.png)
 
 
 ✅ Success Criteria Met:
