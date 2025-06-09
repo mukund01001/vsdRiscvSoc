@@ -112,7 +112,7 @@ Upon successful completion, you should see output similar to:
 
 ## 📸 Implementation Output
 ![Screenshot 2025-06-07 211436](Week1/screenshots/Week1toolchain_sanity_check.png)
-![Screenshot 2025-06-07 211446](Week1/screenshots/Week1toolchain_sanity_check (2).png)
+!([Week1/screenshots/Week1toolchain_sanity_check (2).png](https://github.com/mukund01001/vsdRiscvSoc/blob/main/Week1/screenshots/riscv%20bin%20folders.png))
 ![Screenshot 2025-06-07 211448](Week1/screenshots/riscv bin folders.png)
 
 
