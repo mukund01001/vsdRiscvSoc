@@ -111,7 +111,7 @@ Upon successful completion, you should see output similar to:
 - **ISA Support**: `rv32i2p1_m2p0_a2p1_c2p0` (RV32IMAC)
 
 ## 📸 Implementation Output
-![Screenshot 2025-06-07 211436](https://github.com/user-attachments/assets/7c5734d8-ea76-4e30-9940-532910074e1a)
+![Screenshot 2025-06-07 211436](Week1/screenshots/Week1toolchain_sanity_check.png)
 ![Screenshot 2025-06-07 211446](https://github.com/user-attachments/assets/f69d6fdc-2d29-4c3f-8b94-d961fd39b9b7)
 
 
