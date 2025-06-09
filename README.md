@@ -106,9 +106,9 @@ Upon successful completion, you should see output similar to:
 - **ISA Support**: `rv32i2p1_m2p0_a2p1_c2p0` (RV32IMAC)
 
 ## 📸 Implementation Output
-![Screenshot 2025-06-07 211436](Week1/screenshots/Week1toolchain_sanity_check.png)
 ![sanity check](Week1/screenshots/Week1toolchain_sanity_checkkk.png)
-![sanity](Week1/screenshots/riscv_bin_folders.png)
+![Screenshot 2025-06-07 211436](Week1/screenshots/Week1toolchain_sanity_check.png)
+![bin](Week1/screenshots/riscv_bin_folders.png)
 
 
 *Screenshot demonstrating successful RISC-V toolchain installation with version verification of gcc, objdump, and gdb binaries in WSL environment.*
