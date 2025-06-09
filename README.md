@@ -2,7 +2,7 @@ Task 1: RISC-V Toolchain Setup and Verification
 
 [![RISC-V](https://img.shields.io/badge/Architecture-RISC--V-blue.svg)](https://riscv.org/)
 [![Toolchain](https://img.shields.io/badge/Toolchain-RISC--V%20GCC-blueviolet.svg)]()
-[![WSL](https://img.shields.io/badge/Platform-WSL-orange.svg)](https://docs.microsoft.com/en-us/windows/wsl/)
+[![WSL](Week1/screenshots/Week1toolchain_sanity_check (2).png)
 [![Status](https://img.shields.io/badge/Status-✅%20Complete-success.svg)]()
 
 
