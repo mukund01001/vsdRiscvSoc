@@ -610,7 +610,6 @@ Based on successful conversion, the Intel HEX output structure:
 
 ## 📸 Implementation Output
 ![Screenshot 2025-06-07 212904](Week1/screenshots/Screenshot183637.png)
-![Screenshot 2025-06-07 212951](Week1/screenshots/Screenshot184621.png)
 
 
 
@@ -981,7 +980,9 @@ grep "a0" hello.s
 | **Temporary** | t0-t6 (x5-x7, x28-x31) | Available for use, a5 used temporarily | ✅ Perfect |
 
 ## 📸 Implementation Output
-![Screenshot 2025-06-07 193252](https://github.com/user-attachments/assets/ffb2f9c4-b386-4a09-9fbf-e7b6b9d4a2dd)
+![Screenshot](Week1/screenshots/Screenshot183637.png)
+![Screensho](Week1/screenshots/Screenshot183920.png)
+![Scre](Week1/screenshots/Screenshot183942.png)
 
 
 *Screenshot demonstrating complete RISC-V ABI compliance verification with register usage analysis and comprehensive reference documentation.*
