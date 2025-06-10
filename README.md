@@ -236,6 +236,7 @@ Compilation Method: Default configuration (no explicit flags needed)
 
 #Implementation Output:
 ![ss](Week1/screenshots/Screenshot203613.png)
+![ss](Week1/screenshots/Screenshot183523.png)
 
 
 
@@ -277,7 +278,7 @@ Compilation Method: Default configuration (no explicit flags needed)
 
  
 
-# ⚙️ Task 3: From C to Assembly - Generate and Analyze Assembly Code
+# Task 3: From C to Assembly - Generate and Analyze Assembly Code
 
 [![RISC-V](https://img.shields.io/badge/Architecture-RISC--V-blue.svg)](https://riscv.org/)
 [![Assembly](https://img.shields.io/badge/Language-Assembly-orange.svg)](https://en.wikipedia.org/wiki/Assembly_language)
@@ -289,15 +290,7 @@ Compilation Method: Default configuration (no explicit flags needed)
 Generate assembly code from the C "Hello, RISC-V" program and perform detailed analysis of the function prologue and epilogue to understand RISC-V calling conventions, stack frame management, and instruction encoding patterns.
 
 
-
-## 📋 Prerequisites
-
-- ✅ Task 2 completed: Cross-compiled `hello.elf` binary successfully created
-- ✅ RISC-V toolchain accessible at `/opt/riscv/riscv/bin/`
-- ✅ `hello.c` source file present in working directory
-- ✅ Understanding of basic assembly language concepts
-
-## 🚀 Step-by-Step Implementation
+##  Step-by-Step Implementation
 
 ### Step 1: Generate Assembly Code from C Source
 
@@ -345,7 +338,7 @@ Check file type
 file hello.s
 ```
 
-## 📋 Working Assembly Structure Analysis
+##  Working Assembly Structure Analysis
 
 Based on  successful WSL implementation, here's the actual assembly structure generated:
 
@@ -364,7 +357,7 @@ addi s0,sp,16 # Set up new frame pointer
 - **Frame Pointer**: `sw s0,8(sp)` saves old frame pointer for restoration
 - **Frame Setup**: `addi s0,sp,16` establishes new frame pointer for local variables
 
-### 🎯 **Function Body Analysis:**
+###  **Function Body Analysis:**
 
 lui     a5,%hi(.LC0)   # Load upper immediate of string address
 addi    a0,a5,%lo(.LC0) # Complete address in a0 (first argument register)
@@ -379,7 +372,7 @@ mv      a0,a5          # Move return value to a0 register
 - **Function Call**: `call puts` - GCC optimized `printf` to `puts` for efficiency
 - **Return Value**: Sets function return value to 0 in `a0` register
 
-### 🔄 **Function Epilogue Analysis (Exit Cleanup):**
+### **Function Epilogue Analysis (Exit Cleanup):**
 
 lw      ra,12(sp)      # Restore return address from stack
 lw      s0,8(sp)       # Restore original frame pointer
@@ -392,7 +385,7 @@ jr      ra             # Jump to return address (return to caller)
 - **Stack Cleanup**: `addi sp,sp,16` returns stack pointer to pre-call state
 - **Function Return**: `jr ra` transfers control back to calling function
 
-## 📊 Expected Assembly Output
+##  Expected Assembly Output
 
 Your `hello.s` file should contain these key sections:
 
@@ -433,13 +426,6 @@ main:
 
 ### Common Issues and Solutions:
 
-| Issue | Symptom | Root Cause | Solution |
-|-------|---------|------------|----------|
-| **No Assembly File** | `hello.s` not created | Missing source file or compilation error | Verify `hello.c` exists: `ls -la hello.c` |
-| **Empty Assembly** | `hello.s` exists but empty | Compilation failed silently | Re-run: `riscv32-unknown-elf-gcc -S -O0 hello.c` |
-| **Confusing Output** | Complex assembly structure | Optimization enabled | Ensure `-O0` flag is used for clarity |
-| **Permission Error** | Cannot write assembly file | Directory permissions | Check write permissions: `ls -la .` |
-
 ### Debugging Commands:
 Verify source file exists
 ```bash
@@ -462,9 +448,9 @@ Check assembly file was created
 ls -la hello.s && echo "Assembly file created successfully"
 ```
 
-## 🎉 Success Criteria
+## Success Criteria
 
-Task 3 is considered **complete** when:
+Task 3 is  **completed** when:
 - [x] Assembly file `hello.s` generated without errors
 - [x] Function prologue shows proper stack allocation and register saving
 - [x] Function body demonstrates correct string loading and function call
@@ -473,7 +459,7 @@ Task 3 is considered **complete** when:
 - [x] 16-byte stack alignment is confirmed
 - [x] Ready for binary analysis in Task 4
 
-## 💡 Key Learning Outcomes
+## Learning Outcomes:
 
 ### **Assembly Programming Concepts:**
 - ✅ **Function Prologue/Epilogue**: Understanding of standard function entry/exit patterns
@@ -487,43 +473,10 @@ Task 3 is considered **complete** when:
 - ✅ **Compiler Behavior**: GCC optimizations and code generation patterns
 - ✅ **ABI Compliance**: Application Binary Interface adherence
 
-## 🔗 Next Steps
-
-With assembly analysis complete, proceed to:
-- **Task 4**: Hex dump and disassembly analysis for machine code examination
-- **Task 5**: RISC-V ABI and register convention reference guide
-
----
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 🔍 Task 4: Hex Dump & Disassembly Analysis
+# Task 4: Hex Dump & Disassembly Analysis
 
 [![RISC-V](https://img.shields.io/badge/Architecture-RISC--V-blue.svg)](https://riscv.org/)
 [![Binary Analysis](https://img.shields.io/badge/Analysis-Binary%20Disassembly-purple.svg)]()
@@ -534,14 +487,7 @@ With assembly analysis complete, proceed to:
 
 Convert the compiled RISC-V ELF binary to Intel HEX format for hardware deployment and perform detailed disassembly analysis to understand machine code structure, instruction encoding, and memory layout of the cross-compiled program.[1]
 
-## 📋 Prerequisites
-
-- ✅ Task 3 completed: Assembly analysis understanding achieved
-- ✅ `hello.elf` binary from Task 2 available in working directory
-- ✅ RISC-V toolchain accessible at `/opt/riscv/riscv/bin/`
-- ✅ Understanding of hexadecimal notation and binary formats
-
-## 🚀 Step-by-Step Implementation
+##  Step-by-Step Implementation
 
 ### Step 1: Generate Complete Disassembly
 
@@ -589,7 +535,7 @@ View disassembly with context around main function
 grep -B 5 -A 20 "<main>:" hello.dump
 ```
 
-## 📊 Working Disassembly Output Analysis
+##  Working Disassembly Output Analysis
 
 Based on your successful WSL implementation, here's the actual disassembly structure:
 
@@ -603,7 +549,7 @@ Based on your successful WSL implementation, here's the actual disassembly struc
 10168: 0800 addi s0,sp,16
 ```
 
-### 📋 **Column Explanation:**
+###  **Column Explanation:**
 
 | Column Position | Example | Description | Purpose |
 |----------------|---------|-------------|---------|
@@ -612,15 +558,15 @@ Based on your successful WSL implementation, here's the actual disassembly struc
 | **3️⃣ Mnemonic** | `addi` | Assembly instruction name | Human-readable instruction type |
 | **4️⃣ Operands** | `sp,sp,-16` | Registers and immediate values | Instruction parameters and targets |
 
-### 🎯 **Compressed Instruction Analysis:**
+###  **Compressed Instruction Analysis:**
 
-**Key Observations from Your Output:**
+**Key Observations from Output:**
 - **2-byte Opcodes**: `1141`, `c606`, `c422` demonstrate RV32C (compressed) instructions
 - **Memory Addresses**: Sequential 2-byte increments (10162, 10164, 10166, 10168)
 - **Instruction Density**: Compressed instructions provide ~30% code size reduction
 - **Mixed Encoding**: Some instructions may use 4-byte encoding for complex operations
 
-### 🔄 **Function Structure in Machine Code:**
+### **Function Structure in Machine Code:**
 
 Prologue (Stack Setup):
 10162: 1141 addi sp,sp,-16 # Compressed stack allocation
@@ -663,25 +609,12 @@ Based on successful conversion, the Intel HEX output structure:
 - **`:00000001FF`**: End-of-file record
 
 ## 📸 Implementation Output
-![Screenshot 2025-06-07 212904](https://github.com/user-attachments/assets/b878b15a-6688-4fbb-9ff0-4fa9a95d3aab)
-![Screenshot 2025-06-07 212951](https://github.com/user-attachments/assets/4b1877ed-ad04-480f-a664-e9365b08a1cd)
-![Screenshot 2025-06-07 213019](https://github.com/user-attachments/assets/cbd1a92f-c46d-4543-9339-b85b9e1e91bc)
-![Screenshot 2025-06-07 213043](https://github.com/user-attachments/assets/b7866acd-f5d2-4e81-a331-df412edf0281)
+![Screenshot 2025-06-07 212904](Week1/screenshots/Screenshot183637.png)
+![Screenshot 2025-06-07 212951](Week1/screenshots/Screenshot184621.png)
 
 
 
-*Screenshot demonstrating successful binary disassembly with detailed column analysis and Intel HEX conversion showing machine code structure and memory layout.*
-
-## ⚠️ Troubleshooting Guide
-
-### Common Issues and Solutions:
-
-| Issue | Symptom | Root Cause | Solution |
-|-------|---------|------------|----------|
-| **Empty Disassembly** | `hello.dump` empty or no output | ELF file missing or corrupted | Verify: `ls -la hello.elf` and re-compile if needed |
-| **No HEX Output** | `hello.hex` not created | objcopy failed | Check: `which riscv32-unknown-elf-objcopy` |
-| **Permission Denied** | Cannot write output files | Directory permissions | Verify write access: `ls -la .` |
-| **Malformed HEX** | Invalid HEX format | Conversion error | Re-run objcopy with verbose: `-v` flag |
+*Screenshot demonstrating successful binary disassembly with detailed column analysis 
 
 ### Debugging Commands:
 Verify input file exists and is valid ELF
@@ -712,9 +645,9 @@ riscv32-unknown-elf-objcopy -O ihex hello.elf hello.hex && echo "HEX file create
 - **Hardware Testing**: FPGA and ASIC verification
 - **Bootloader**: System initialization and program loading
 
-## 🎉 Success Criteria
+## Success Criteria
 
-Task 4 is considered **complete** when:
+Task 4 is **completed** when:
 - [x] Disassembly file `hello.dump` contains readable machine code analysis
 - [x] Intel HEX file `hello.hex` generated with proper format and checksums
 - [x] Column structure (address, opcode, mnemonic, operands) is understood
@@ -723,7 +656,7 @@ Task 4 is considered **complete** when:
 - [x] Binary is ready for hardware deployment or simulation
 - [x] Ready for ABI and register analysis in Task 5
 
-## 💡 Key Learning Outcomes
+## Key Learning Outcomes
 
 ### **Binary Analysis Skills:**
 - ✅ **Disassembly Interpretation**: Reading and understanding machine code output
@@ -743,13 +676,6 @@ Task 4 is considered **complete** when:
 - ✅ **Deployment Preparation**: Format conversion for target hardware
 - ✅ **Quality Assurance**: Verification of compilation and linking results
 
-## 🔗 Next Steps
-
-With binary analysis complete, proceed to:
-- **Task 5**: RISC-V ABI and register convention comprehensive reference
-- **Advanced Topics**: Debugging with GDB, performance analysis, and optimization
-
----
 
 
 
@@ -776,7 +702,7 @@ With binary analysis complete, proceed to:
 
 
 
-# 📚 Task 5: RISC-V ABI & Register Cheat-Sheet
+# Task 5: RISC-V ABI & Register Cheat-Sheet
 
 [![RISC-V](https://img.shields.io/badge/Architecture-RISC--V-blue.svg)](https://riscv.org/)
 [![ABI](https://img.shields.io/badge/Standard-ABI%20Reference-green.svg)]()
@@ -787,14 +713,14 @@ With binary analysis complete, proceed to:
 
 Create a comprehensive RISC-V Application Binary Interface (ABI) reference guide that maps all 32 integer registers to their ABI names and documents the complete calling convention rules for function arguments, return values, and register preservation requirements.[2][3]
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - ✅ Tasks 1-4 completed: Understanding of RISC-V assembly and binary analysis
 - ✅ Assembly analysis from Task 3 showing register usage patterns
 - ✅ Basic understanding of function calling mechanisms and stack operations
 - ✅ WSL environment with working RISC-V toolchain
 
-## 🚀 Step-by-Step Implementation
+##  Step-by-Step Implementation
 
 ### Step 1: Create Complete Register Reference Table
 
@@ -846,9 +772,9 @@ nano risc_v_register_table.md
 | **x30** | `t5` | Temporary | Caller-saved | No | Temporary register 5 |
 | **x31** | `t6` | Temporary | Caller-saved | No | Temporary register 6 |
 
-### 📊 Register Category Summary
+### Register Category Summary
 
-#### 🔒 **Special Purpose Registers**
+####  **Special Purpose Registers**
 | Registers | Purpose | Notes |
 |-----------|---------|-------|
 | `x0 (zero)` | Hard-wired zero | Always 0, writes ignored |
@@ -857,26 +783,26 @@ nano risc_v_register_table.md
 | `x3 (gp)` | Global pointer | Unallocatable by compiler |
 | `x4 (tp)` | Thread pointer | Unallocatable by compiler |
 
-#### ⚡ **Temporary Registers (Caller-Saved)**
+#### **Temporary Registers (Caller-Saved)**
 | Registers | ABI Names | Usage |
 |-----------|-----------|-------|
 | `x5-x7` | `t0-t2` | Temporary computation, not preserved across calls |
 | `x28-x31` | `t3-t6` | Additional temporary registers |
 
-#### 💾 **Saved Registers (Callee-Saved)**
+#### **Saved Registers (Callee-Saved)**
 | Registers | ABI Names | Usage |
 |-----------|-----------|-------|
 | `x8` | `s0/fp` | Saved register 0 / Optional frame pointer |
 | `x9` | `s1` | Saved register 1 |
 | `x18-x27` | `s2-s11` | Saved registers 2-11 (10 registers total) |
 
-#### 📤 **Argument/Return Registers (Caller-Saved)**
+#### **Argument/Return Registers (Caller-Saved)**
 | Registers | ABI Names | Usage |
 |-----------|-----------|-------|
 | `x10-x11` | `a0-a1` | First 2 arguments / Return values (up to 64-bit) |
 | `x12-x17` | `a2-a7` | Additional function arguments |
 
-### 🎯 **Calling Convention Rules**
+###  **Calling Convention Rules**
 
 #### **Function Call Protocol:**
 1. **Arguments**: Pass first 8 in `a0-a7`, additional on stack
@@ -1045,7 +971,7 @@ grep "a0" hello.s
 ```
 
 
-### 📋 **Register Categories Summary:**
+###  **Register Categories Summary:**
 
 | Category | Registers |  Code Usage | ABI Compliance |
 |----------|-----------|-----------------|----------------|
